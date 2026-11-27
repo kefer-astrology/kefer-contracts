@@ -1,0 +1,12 @@
+{
+  "chart_id": "synthetic-chart",
+  "calculation_convention": "kefer-positions/1",
+  "positions": {"sun": 12.5},
+  "motion": {"sun": {"speed": 1.0, "retrograde": false}},
+  "aspects": [],
+  "axes": {"asc": 30, "mc": 300, "desc": 210, "ic": 120},
+  "house_cusps": [30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 0],
+  "moon_details": null,
+  "fallback_used": false,
+  "warnings": []
+}

@@ -1,0 +1,9 @@
+{
+  "name": "kefer-contracts",
+  "version": "0.1.0",
+  "files": {
+    "event-time.json": "f596050409bfd39c002c5fb014b9d694d406732bd189ef0dd3912b7e4775c6a9",
+    "examples/chart-result.json": "2f2665bac0e3cd55945a31c95a1eb99a1b081db7bf07fa8a6e8ce4317c2d7d0a",
+    "schemas/api/chart-result.schema.json": "25b7c8b91009f2ac1654b9298db3bd11a0659d8b9a261edcd75f83520705ab27"
+  }
+}

@@ -1,0 +1,10 @@
+[package]
+name = "kefer-contracts"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Public chart-result interface for Kefer Astrology."
+repository = "https://github.com/kefer-astrology/kefer-contracts"
+include = ["src/**", "contracts/**", "VERSION", "LICENSE", "LICENSING.md", "CONVENTIONS.md", "README.md"]
+
+[dependencies]

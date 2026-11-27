@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kefer-astrology/kefer-contracts/blob/v0.1.0/contracts/schemas/api/chart-result.schema.json",
+  "title": "Kefer chart result",
+  "description": "Public chart-result fields. Additional fields may be present. See CONVENTIONS.md for their interpretation.",
+  "type": "object",
+  "required": [
+    "positions",
+    "motion",
+    "aspects",
+    "axes",
+    "house_cusps",
+    "moon_details",
+    "chart_id",
+    "fallback_used",
+    "warnings",
+    "calculation_convention"
+  ],
+  "properties": {
+    "positions": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "object",
+            "required": [
+              "longitude"
+            ]
+          }
+        ]
+      },
+      "description": "Geocentric ecliptic longitudes in degrees, indexed by stable body identifier."
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "speed",
+          "retrograde"
+        ],
+        "properties": {
+          "speed": {
+            "type": "number"
+          },
+          "retrograde": {
+            "type": "boolean"
+          }
+        }
+      },
+      "description": "Longitude speed in degrees per day and retrograde state, indexed by body identifier."
+    },
+    "aspects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "type",
+          "angle",
+          "orb",
+          "exact_angle"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "angle": {
+            "type": "number"
+          },
+          "orb": {
+            "type": "number"
+          },
+          "exact_angle": {
+            "type": "number"
+          },
+          "applying": {
+            "type": "boolean"
+          },
+          "separating": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "axes": {
+      "type": "object",
+      "properties": {
+        "asc": {
+          "type": "number"
+        },
+        "mc": {
+          "type": "number"
+        },
+        "desc": {
+          "type": "number"
+        },
+        "ic": {
+          "type": "number"
+        }
+      }
+    },
+    "house_cusps": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "moon_details": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "chart_id": {
+      "type": "string"
+    },
+    "fallback_used": {
+      "type": "boolean",
+      "description": "Indicates that the service reported a fallback."
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Result diagnostics. Display the strings as diagnostics and allow unknown codes."
+    },
+    "calculation_convention": {
+      "type": "string",
+      "description": "Identifier of the coordinate convention used for the result."
+    }
+  },
+  "additionalProperties": true
+}
